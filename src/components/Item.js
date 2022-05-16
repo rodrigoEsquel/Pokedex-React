@@ -1,9 +1,9 @@
 import { Button } from '@chakra-ui/react'
 
-function Item() {
+function Item({onOpen}) {
 
   return (
-  <Button colorScheme='teal' variant='outline'>
+  <Button colorScheme='teal' variant='outline' onClick={onOpen}>
     Button
   </Button>
   );

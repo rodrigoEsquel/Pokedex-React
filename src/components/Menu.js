@@ -1,10 +1,10 @@
 import Item from "./Item";
 import { Stack } from '@chakra-ui/react'
 
-function Menu() {
+function Menu({onOpen}) {
   return (
     <Stack spacing={4} direction='row' align='center'>
-      <Item />
+      <Item onOpen={onOpen}/>
     </Stack>
   );
 }

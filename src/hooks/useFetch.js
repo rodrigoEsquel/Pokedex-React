@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 
-
 const useFetch = (recurso, param) => {
   const [data, setData] = useState();
 
