@@ -1,3 +1,4 @@
+/*
 const baseUrl = 'https://pokeapi.co/api/v2/pokemon/';
 
 function urlPokemon(pokemon) {
@@ -7,20 +8,19 @@ function urlPokemon(pokemon) {
 function urlListaPokemon(pagina) {
   return `${baseUrl}?offset=${pagina}0&limit=10`;
 }
+*/
 
-const conseguirRecurso = async (recurso) => {
-  const respuesta = await fetch(recurso);
-  if (!respuesta.ok) {
-    throw new Error('Error en la API');
-  }  
-  return respuesta.json();
+const conseguirRecurso = async (url) => {
+  const respuesta = await fetch(url)
+  const recurso = await respuesta.json();
+  return recurso;   
 }
 
 const pokeApi = {
-  id: (idPokemon) => conseguirRecurso(urlPokemon(idPokemon)),
-  nombre: (nombrePokemon) => conseguirRecurso(urlPokemon(nombrePokemon)),
-  lista: (numeroPagina) => conseguirRecurso(urlListaPokemon(numeroPagina)),
-}
+  getPokemonById: (id) => conseguirRecurso(id),
+  getPokemonByName: (nombre) => conseguirRecurso(nombre),
+  getPokemonListByPage: (pagina) => conseguirRecurso(pagina),
+};
 
 export default pokeApi;
 
