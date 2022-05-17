@@ -1,10 +1,12 @@
 import { Button } from '@chakra-ui/react'
 
-function Item({onOpen}) {
+function Item({name, onClick, number = null}) {
 
   return (
-  <Button colorScheme='teal' variant='outline' onClick={onOpen}>
-    Button
+  <Button w='full' h='full' colorScheme='teal' variant='outline' name={name} onClick={onClick}>
+    {name.toUpperCase()} 
+    <br/> 
+    {number && '# ' + number}
   </Button>
   );
 }
