@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 
 const useFetch = (recurso, param) => {
   const [data, setData] = useState(null);
-  
 
   useEffect(()=>{
     if (param) {
@@ -14,7 +13,9 @@ const useFetch = (recurso, param) => {
         }
       }
       fetch()
-    } 
+    } else {
+      setData(null);
+    }
   },[recurso, param])
 
   return [data];

@@ -18,7 +18,7 @@ function Menu({setPokemon, onOpen}) {
       bg='blue.300'
     >
       <GridItem rowSpan={2} bg='blue.500' >
-        <Item name='<<' onClick={() => {setPagina(dataPagina.previous)}}/>
+        <Item name='<<' onClick={dataPagina?.previous == null ? () => {} : () => { setPagina(dataPagina.previous)}}/>
       </GridItem>
     {dataPagina?.results.map(({name,url}) => (
       <GridItem bg='blue.500' w='100%'  key={name}>
@@ -34,7 +34,7 @@ function Menu({setPokemon, onOpen}) {
       )) ?? <Spinner /> 
     }
       <GridItem rowSpan={2} bg='blue.500' >
-        <Item name='>>' onClick={() => {setPagina(dataPagina.next)}}/>
+        <Item name='>>' onClick={dataPagina?.next == null ? () => {} : () => {setPagina(dataPagina.next)}}/>
       </GridItem>
     </Grid>
   );
