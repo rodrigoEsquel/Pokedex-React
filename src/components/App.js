@@ -6,7 +6,7 @@ import { Container, useDisclosure } from '@chakra-ui/react'
 import Pokemon from './Pokemon';
 
 function App() {
-  const [pokemon, setPokemon] = useState('ninguno');
+  const [pokemon, setPokemon] = useState(null);
   const [dataPokemon] = useFetch(pokeApi.getPokemonListByPage, pokemon);
   const { isOpen, onOpen, onClose } = useDisclosure()
 

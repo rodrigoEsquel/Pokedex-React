@@ -13,7 +13,6 @@ function Pokemon({isOpen, onClose}) {
 
   return (
     <>
-      {isOpen ? 'HOla' : 'que mal'}
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent>

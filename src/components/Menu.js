@@ -8,8 +8,6 @@ import { Spinner,Grid, GridItem } from '@chakra-ui/react'
 function Menu({setPokemon, onOpen}) {
   const [pagina, setPagina] = useState('https://pokeapi.co/api/v2/pokemon/');
   const [dataPagina] = useFetch(pokeApi.getPokemonListByPage, pagina);
-
-
   
   return (
     <Grid  
@@ -23,9 +21,8 @@ function Menu({setPokemon, onOpen}) {
         <Item name='<<' onClick={() => {setPagina(dataPagina.previous)}}/>
       </GridItem>
     {dataPagina?.results.map(({name,url}) => (
-      <GridItem bg='blue.500' w='100%' >
-        <Item 
-          key={name}
+      <GridItem bg='blue.500' w='100%'  key={name}>
+        <Item
           name={name}
           number={url.split('/')[6]} 
           onClick={() => {
