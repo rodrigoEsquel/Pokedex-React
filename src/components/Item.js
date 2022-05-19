@@ -1,13 +1,18 @@
-import { Button } from '@chakra-ui/react'
+import { Flex } from '@chakra-ui/react'
 
 function Item({name, onClick, number = null}) {
 
   return (
-  <Button w='full' h='full' colorScheme='teal' variant='outline' name={name} onClick={onClick}>
-    {name.toUpperCase()} 
-    <br/> 
-    {number && '# ' + number}
-  </Button>
+  <Flex
+      borderRadius='10px'
+      bg='#A0AEC0'
+      h='88px'
+      alignItems='center'
+      direction='column'
+      onClick={onClick}>
+    <p>{name.toUpperCase()}</p>
+    <p>{number && '# ' + number}</p>
+  </Flex>
   );
 }
 

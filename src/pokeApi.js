@@ -1,6 +1,6 @@
-/*
-const baseUrl = 'https://pokeapi.co/api/v2/pokemon/';
 
+export const baseUrl = 'https://pokeapi.co/api/v2/pokemon/';
+/*
 function urlPokemon(pokemon) {
   return baseUrl + pokemon;
 }
