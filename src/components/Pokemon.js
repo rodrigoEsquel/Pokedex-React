@@ -23,7 +23,7 @@ function Pokemon({isOpen, onClose, forms, sprites}) {
           </Center>
           <ModalCloseButton />
           <ModalBody>
-            <Image src={sprites?.other['official-artwork'].front_default ?? <Skeleton height='20px' /> } alt='Pokemon image' />
+            <Image src={sprites?.other['official-artwork'].front_default ?? <Skeleton height='200px' /> } alt='Pokemon image' />
           </ModalBody>
           <Center >
             <ModalFooter>
