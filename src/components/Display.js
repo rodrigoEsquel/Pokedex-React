@@ -2,7 +2,7 @@ import { Text, Flex } from '@chakra-ui/react'
 
 function Display() {
   return (
-    <Flex>
+    <Flex m={3}>
       <Text>Display</Text>
     </Flex>
   )

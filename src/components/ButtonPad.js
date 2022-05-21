@@ -7,10 +7,10 @@ function ButtonPad({previousPage, nextPage, inputValue, setPagina, setPokemon}) 
   return (
     <Flex>
     <Box w='250px' border='1px' rounded='md' bg='gray.200' borderColor='gray.400' align='stretch'>
-      <IconButton onClick={previousPage ? () => {setPagina(previousPage)} : () => {} } icon={<ArrowLeftIcon />} />
-      <Input w={48}  placeholder='Search your pokemon' onChange={(e) => {inputValue = e.target.value}} />
+      <IconButton boxSize={'0.5em'} onClick={previousPage ? () => {setPagina(previousPage)} : () => {} } icon={<ArrowLeftIcon />} />
+      <Input w={'150px'}  placeholder='Search your pokemon' onChange={(e) => {inputValue = e.target.value}} />
       <IconButton onClick={() => {setPokemon(baseUrl + inputValue)}} icon={<SearchIcon />} />
-      <IconButton zIndex={2} onClick={nextPage ? () => {setPagina(nextPage)} : () => {} } icon={<ArrowRightIcon />} />
+      <IconButton onClick={nextPage ? () => {setPagina(nextPage)} : () => {} } icon={<ArrowRightIcon />} />
     </Box>
     </Flex>
   )
