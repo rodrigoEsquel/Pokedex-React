@@ -1,14 +1,14 @@
 import React from 'react';
 import { ChakraProvider } from '@chakra-ui/react';
 import Header from './Header';
-import Search from './Search';
+import Pokedex from './Pokedex';
 
 function App() {
   return (
     <React.StrictMode>
       <ChakraProvider>
         <Header />
-        <Search />
+        <Pokedex />
       </ChakraProvider>
     </React.StrictMode>
   );
