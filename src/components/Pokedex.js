@@ -1,5 +1,5 @@
 import { useState, useRef } from 'react';
-import { Flex, SimpleGrid, VStack } from '@chakra-ui/react'
+import { Flex, SimpleGrid } from '@chakra-ui/react'
 import useFetch from '../hooks/useFetch';
 import Menu from './Menu';
 import Pokemon from './Pokemon';
@@ -16,18 +16,19 @@ function Pokedex() {
   console.log(dataPokemon);
 
   return (
-    <Flex justifyContent={'center'} alignItems={'center'} h='100vh'>
-    <SimpleGrid columns={{sm: 1, lg: 2}} bg={'red.400'}>
-      <SimpleGrid columns={{sm: 1, md: 2}} >
+
+    <Flex justifyContent={'center'} alignItems={'center'} grow='1' >
+      <Flex flexDirection={{sm: 'column', lg: 'row'}} m={5} bg={'red.500'} justifyContent={'space-evenly'} alignItems={'center'} rounded={'md'}>
+      <Flex flexDirection={{sm: 'column', md: 'row'}} justifyContent={'space-evenly'}>
         <Pokemon sprite={dataPokemon?.sprites} forms={dataPokemon?.forms}/>
-        <SimpleGrid columns={1} h='400px' w='250px' my={{sm: 0, md: 3}} mx={3} justifyContent={'center'} bg={'red.600'}>
+        <SimpleGrid columns={1} h='400px' w='250px' my={{sm:0, md:3}} mx={{sm:3, md:3}} justifyContent={'center'} bg={'red.600'}>
           <Display />
           <ButtonPad previousPage={dataPagina?.previous} nextPage={dataPagina?.next} inputValue={refInputValue.current} setPagina={setPagina} setPokemon={setPokemon}/>
         </SimpleGrid>
-      </SimpleGrid >
-      <Menu setPokemon={setPokemon} listResults={dataPagina?.results} />
-    </SimpleGrid >  
+      </Flex >
+      <Menu setPokemon={setPokemon} listResults={dataPagina?.results} /> 
     </Flex>
+</Flex>
   );
 }
 
