@@ -8,7 +8,7 @@ function App() {
     <React.StrictMode>
       <ChakraProvider>
         <Header />
-        <Pokedex />
+        <Pokedex style={{'backgroundImage': 'url("../../public/img/background.png")', 'backgroundRepeat': 'no-repeat', 'backgroundAttachment': 'fixed', 'backgroundSize': '100% 100%'}}/>
       </ChakraProvider>
     </React.StrictMode>
   );

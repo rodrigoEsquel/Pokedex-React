@@ -1,7 +1,8 @@
-import { Text } from '@chakra-ui/react'
+import { Flex, Text } from '@chakra-ui/react'
 
 function Header() {
-  return (    
+  return (  
+    <Flex justifyContent={'center'} zIndex={1} bg={'blackAlpha.700'}>
     <Text bg="#00f"
       bgClip="text"
       _after={{textShadow: '-2px -2px #ff0'}}
@@ -11,7 +12,7 @@ function Header() {
       textAlign='center'>
       Poke-API
     </Text>
-
+</Flex>
   );
 }
 

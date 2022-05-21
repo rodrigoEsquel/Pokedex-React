@@ -1,6 +1,10 @@
+import { Text, Flex } from '@chakra-ui/react'
+
 function Display() {
   return (
-    <div>Display</div>
+    <Flex>
+      <Text>Display</Text>
+    </Flex>
   )
 
 }
