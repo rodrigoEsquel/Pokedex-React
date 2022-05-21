@@ -1,5 +1,8 @@
 function Display() {
-  return
+  return (
+    <div>Display</div>
+  )
+
 }
 
 export default Display;

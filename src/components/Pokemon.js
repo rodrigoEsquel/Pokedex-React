@@ -1,38 +1,20 @@
 import {
-  Modal,
-  ModalOverlay,
-  ModalContent,
-  ModalHeader,
-  ModalFooter,
-  ModalBody,
-  ModalCloseButton,
-  Button,
+  Flex,  
+  Text,
   Image,
-  Skeleton,
   Center,
-} from '@chakra-ui/react'
+} from  '@chakra-ui/react'
 
-function Pokemon({isOpen, onClose, forms, sprites}) {
+function Pokemon({forms, sprite}) {
   return (
-    <>
-      <Modal isOpen={isOpen} onClose={onClose} >
-        <ModalOverlay />
-        <ModalContent>
-          <Center >
-            <ModalHeader>{forms?.[0].name.toUpperCase() ?? <Skeleton height='20px' />}</ModalHeader>
-          </Center>
-          <ModalCloseButton />
-          <ModalBody>
-            <Image src={sprites?.other['official-artwork'].front_default ?? <Skeleton height='200px' /> } alt='Pokemon image' />
-          </ModalBody>
-          <Center >
-            <ModalFooter>
-              <Button  colorScheme='blue' mr={3} >Go to Page</Button>
-            </ModalFooter>
-          </Center>
-        </ModalContent>
-      </Modal>
-    </>
+    <Flex> 
+      <Center>
+        <Text>{forms?.[0].name.toUpperCase() ?? 'Selecciona un Pokemon'}</Text>
+      </Center>
+      <Center>
+        <Image src={sprite?.other['official-artwork'].front_default ?? '../../img/pokebola.png' } alt='Pokemon image' />
+      </Center>
+    </Flex>
   )
 }
 
