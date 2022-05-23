@@ -9,6 +9,11 @@ function urlListaPokemon(pagina) {
   return `${baseUrl}?offset=${pagina}0&limit=10`;
 }
 */
+export const validacionPokemon = (inputValue, callback) => {
+  const regexNombrePokemon = /^[a-zA-Z]*$/;
+  const regexIdPokemon = /^[0-9]*$/;
+  (regexNombrePokemon.test(inputValue) || regexIdPokemon.test(inputValue)) && callback(baseUrl + inputValue);
+}
 
 const conseguirRecurso = async (url) => {
   const respuesta = await fetch(url)
