@@ -10,8 +10,8 @@ function urlListaPokemon(pagina) {
 }
 */
 export const validacionPokemon = (inputValue, callback) => {
-  const regexNombrePokemon = /^[a-zA-Z]*$/;
-  const regexIdPokemon = /^[0-9]*$/;
+  const regexNombrePokemon = /^[a-zA-Z]+$/;
+  const regexIdPokemon = /^[0-9]+$/;
   (regexNombrePokemon.test(inputValue) || regexIdPokemon.test(inputValue)) && callback(baseUrl + inputValue);
 }
 
