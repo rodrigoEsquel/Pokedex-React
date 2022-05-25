@@ -1,6 +1,6 @@
 import { useState, useRef } from 'react';
 import { Flex } from '@chakra-ui/react'
-import useFetch from '../hooks/useFetch';
+import useFetchWithStorage from '../hooks/useFetchWithStorage';
 import pokeApi, { baseUrl } from '../pokeApi';
 import Menu from './Menu';
 import Pokemon from './Pokemon';
@@ -9,10 +9,10 @@ import ButtonPad from './ButtonPad';
 
 function Pokedex() {
   const [pagina, setPagina] = useState(baseUrl);
-  const [dataPagina] = useFetch(pokeApi.getPokemonListByPage, pagina);
+  const [dataPagina] = useFetchWithStorage(pokeApi.getPokemonListByPage, pagina);
   const refInputValue = useRef('');
   const [pokemon, setPokemon] = useState(null);
-  const [dataPokemon] = useFetch(pokeApi.getPokemonListByPage, pokemon);  
+  const [dataPokemon] = useFetchWithStorage(pokeApi.getPokemonListByPage, pokemon);  
 
   return (
     <Flex justifyContent={'center'} alignItems={'center'} grow='1' >
