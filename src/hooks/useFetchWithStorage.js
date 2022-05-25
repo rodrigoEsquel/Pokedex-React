@@ -9,7 +9,7 @@ const useFetchWithStorage = (recurso, param) => {
       console.log('Seteo null');
       setData(null);
     } else if (localStorage.getItem(param)) {
-      console.log('Traigo dato de el localStorage');
+      console.log('Traigo dato del localStorage');
       setData(localStorage.getItem(param));
     } else {
       console.log('Traigo dato de la api');
@@ -17,7 +17,7 @@ const useFetchWithStorage = (recurso, param) => {
           try {
             const rec = await recurso(param);
             localStorage.setItem(param,rec);
-            setData (rec)
+            setData(rec);
           } catch (error) {
             console.log(error)
           }
