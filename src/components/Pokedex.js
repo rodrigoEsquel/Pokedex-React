@@ -12,7 +12,7 @@ function Pokedex() {
   const [dataPagina] = useFetchWithStorage(pokeApi.getPokemonListByPage, pagina);
   const refInputValue = useRef('');
   const [pokemon, setPokemon] = useState(null);
-  const [dataPokemon] = useFetchWithStorage(pokeApi.getPokemonByNameOrId, pokemon);  
+  const [dataPokemon] = useFetchWithStorage(pokeApi.getPokemonByNameOrId, pokemon);
 
   return (
     <Flex justifyContent={'center'} alignItems={'center'} grow='1' >
