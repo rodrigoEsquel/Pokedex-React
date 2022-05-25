@@ -22,8 +22,7 @@ const conseguirRecurso = async (url) => {
 }
 
 const pokeApi = {
-  getPokemonById: (id) => conseguirRecurso(id),
-  getPokemonByName: (nombre) => conseguirRecurso(nombre),
+  getPokemonByNameOrId: (nombre) => conseguirRecurso(nombre),
   getPokemonListByPage: (pagina) => conseguirRecurso(pagina),
 };
 
