@@ -4,19 +4,15 @@ const useFetchWithStorage = (recurso, param) => {
   const [data, setData] = useState(null);
 
   useEffect( () => {
-      console.log(param);
     if (!param) {
-      console.log('Seteo null');
       setData(null);
     } else if (localStorage.getItem(param)) {
-      console.log('Traigo dato del localStorage');
-      setData(localStorage.getItem(param));
+      setData(JSON.parse(localStorage.getItem(param)));
     } else {
-      console.log('Traigo dato de la api');
       const fetch = async () => {
           try {
             const rec = await recurso(param);
-            localStorage.setItem(param,rec);
+            localStorage.setItem(param,JSON.stringify(rec));
             setData(rec);
           } catch (error) {
             console.log(error)
