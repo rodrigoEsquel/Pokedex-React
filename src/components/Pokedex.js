@@ -1,6 +1,6 @@
 import { useState, useRef } from 'react';
 import { Flex } from '@chakra-ui/react'
-import useFetchWithStorage from '../hooks/useFetchWithStorage';
+import useReduceFetchWithStorage from '../hooks/useReduceFetchWithStorage';
 import pokeApi, { baseUrl } from '../pokeApi';
 import Menu from './Menu';
 import Pokemon from './Pokemon';
@@ -9,11 +9,11 @@ import ButtonPad from './ButtonPad';
 
 function Pokedex() {
   const [pagina, setPagina] = useState(baseUrl);
-  const [dataPagina] = useFetchWithStorage(pokeApi.getPokemonListByPage, pagina);
+  const {data: dataPagina} = useReduceFetchWithStorage(pokeApi.getPokemonListByPage, pagina);
   const refInputValue = useRef('');
   const [pokemon, setPokemon] = useState(null);
-  const [dataPokemon] = useFetchWithStorage(pokeApi.getPokemonByNameOrId, pokemon);
-
+  const {data: dataPokemon} = useReduceFetchWithStorage(pokeApi.getPokemonByNameOrId, pokemon);
+  
   return (
     <Flex justifyContent={'center'} alignItems={'center'} grow='1' >
       <Flex m={5} p={3} bg={'red.500'} rounded={'md'} flexDirection={{sm: 'column', lg: 'row'}} justifyContent={'space-evenly'} alignItems={'center'}>

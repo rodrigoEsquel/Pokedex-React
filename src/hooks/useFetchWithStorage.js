@@ -11,11 +11,11 @@ const useFetchWithStorage = (recurso, param) => {
     } else {
       const fetch = async () => {
           try {
-            const rec = await recurso(param);
-            localStorage.setItem(param,JSON.stringify(rec));
-            setData(rec);
+            const resource = await recurso(param);
+            localStorage.setItem(param,JSON.stringify(resource));
+            setData(resource);
           } catch (error) {
-            console.log(error)
+            console.log('Pokemon no valido')
           }
         }
         fetch();
